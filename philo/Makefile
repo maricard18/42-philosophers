@@ -17,14 +17,14 @@ RM = rm -rf
 NAME = philo
 INCLUDES = includes
 
-SRC =
+SRC = ./src/test.c
 
 SRC-OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(SRC-OBJ) $(LIBFT)
-	$(CC) -pthread $(CFLAGS) main.c $(SRC-OBJ) -o $(NAME) -I $(INCLUDES)
+	$(CC) -pthread $(CFLAGS) $(SRC-OBJ) -o $(NAME) -I $(INCLUDES)
 
 %.o: %.c
 	$(CC) -pthread $(CFLAGS) -c $< -o $@ -I $(INCLUDES)
