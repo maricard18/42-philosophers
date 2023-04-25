@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   linked_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 17:12:53 by maricard         ###   ########.fr       */
+/*   Created: 2023/04/25 17:03:06 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/25 17:26:33 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv)
+void	init_linked_list(t_root *root)
 {
-    t_root  root;
+	int	i;
+	t_fork *current;
 
-    ft_bzero(&root, sizeof(t_root));
-    if (argc < 5 || argc > 6)
-    {
-        printf("Program must receive at least 4 arguments to start\n");
-        return (0);
-    }
-    init_args(&root, argv);
-    init_linked_list(&root);
-    start_threads(&root);
-    return (0);
+	i = 0;
+	current = &root->fork;
+	while (i < root->n_forks)
+	{
+		current->next = malloc(sizeof(t_fork));
+		i++;
+		current = current->next;
+		printf("List %d\n", i);
+	}
+	current->next = NULL;
 }
