@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 10:54:32 by maricard         ###   ########.fr       */
+/*   Created: 2022/11/04 11:59:52 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/25 10:36:17 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv)
+int	ft_atoi(const char *str)
 {
-    t_root  root;
+	int		i;
+	int		sin;
+	int		num;
 
-    ft_bzero(&root, sizeof(t_root));
-    if (argc < 5 || argc > 6)
-    {
-        printf("Program must receive at least 4 arguments to start\n");
-        return (0);
-    }
-    init_args(&root, argv);
-    return (0);
+	i = 0;
+	sin = 1;
+	num = 0;
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sin = sin * -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+			num = num * 10 + (str[i] - '0');
+			i++;
+	}
+	return (num * sin);
 }

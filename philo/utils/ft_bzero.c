@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 10:54:32 by maricard         ###   ########.fr       */
+/*   Created: 2022/11/07 08:10:49 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/25 10:36:07 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-    t_root  root;
-
-    ft_bzero(&root, sizeof(t_root));
-    if (argc < 5 || argc > 6)
-    {
-        printf("Program must receive at least 4 arguments to start\n");
-        return (0);
-    }
-    init_args(&root, argv);
-    return (0);
+	while (n-- > 0)
+		((char *)s)[n] = 0;
 }

@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 10:54:32 by maricard         ###   ########.fr       */
+/*   Created: 2023/04/25 10:31:40 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/25 10:40:53 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-int main(int argc, char **argv)
+void    init_args(t_root *root, char **argv)
 {
-    t_root  root;
-
-    ft_bzero(&root, sizeof(t_root));
-    if (argc < 5 || argc > 6)
-    {
-        printf("Program must receive at least 4 arguments to start\n");
-        return (0);
-    }
-    init_args(&root, argv);
-    return (0);
+	root->n_philos = ft_atoi(argv[1]);
+	root->n_forks = root->n_philos;
+	root->t_die = ft_atoi(argv[2]);
+	root->t_eat = ft_atoi(argv[3]);
+	root->t_sleep = ft_atoi(argv[4]);
+	if (argv[5])
+		root->n_philos_eat = ft_atoi(argv[5]);
 }
