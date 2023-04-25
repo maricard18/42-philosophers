@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 17:03:06 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 17:26:33 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/25 19:26:49 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	init_linked_list(t_root *root)
 		current->next = malloc(sizeof(t_fork));
 		i++;
 		current = current->next;
-		printf("List %d\n", i);
+		printf("Linked list %d\n", i);
 	}
 	current->next = NULL;
 }
