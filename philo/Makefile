@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
+#    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/04/25 17:12:35 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/26 10:33:44 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC =	./utils/ft_atoi.c \
 		./utils/args.c \
 		./utils/tests.c \
 		./utils/linked_list.c \
-		./src/threads.c 
+		./utils/print.c \
+		./src/threads.c  \
+		./src/forks.c
 
 SRC-OBJ = $(SRC:.c=.o)
 

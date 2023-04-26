@@ -3,41 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 17:20:24 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 10:37:03 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void*	start_dinner(void* args)
+void*	start_dinner(void* root)
 {	
-	int	i;
-	
-	i = *(int*)args;
-	printf("Number of forks: %d\n", i);
+	check_for_forks(root);
 	return (0);
 }
 
 void	start_threads(t_root *root)
 {
-	int i;
-
-	i = 0;
+	root->th_index = 0;
 	root->t.philos = malloc(sizeof(pthread_t) * root->n_philos);
-	pthread_mutex_init(&root->t.forks, NULL);
-	while (i < root->n_philos)
+	pthread_mutex_init(&root->t.mutex, NULL);
+	while (root->th_index < root->n_philos)
 	{
-		pthread_create(&root->t.philos[i], NULL, &start_dinner, &root->n_forks);
-		i++;
+		pthread_create(&root->t.philos[root->th_index], NULL, \
+												&start_dinner, root);
+		root->th_index++;
 	}
-	i = 0;
-	while (i < root->n_philos)
+	root->th_index = 0;
+	while (root->th_index < root->n_philos)
 	{
-		pthread_join(root->t.philos[i], NULL);
-		i++;
+		pthread_join(root->t.philos[root->th_index], NULL);
+		root->th_index++;
 	}
-	pthread_mutex_destroy(&root->t.forks);
+	pthread_mutex_destroy(&root->t.mutex);
 }
