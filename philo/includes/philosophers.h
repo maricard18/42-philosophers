@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 21:46:17 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 23:57:43 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,10 @@ typedef struct s_root
 void				ft_bzero(void *s, size_t n);
 void				init_args(t_root *root, char **argv);
 int					ft_atoi(const char *str);
-void				print(long long time, int philo, char *str, t_philos *philos);
+void				print(long long time, int philo, char *str,
+						t_philos *philos);
 void				tests(t_root *root);
-long long			get_time();
+long long			get_time(void);
 int					updated_time(t_root *root);
 
 // src

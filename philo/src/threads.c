@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 21:43:27 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 23:56:36 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*start_dinner(void *arg)
 
 	philos = arg;
 	while (philos->n_eat != philos->root->n_philos_must_eat
-			|| philos->died == 0)
+		|| philos->died == 0)
 	{
 		check_for_forks(philos);
 		start_sleeping(philos);
