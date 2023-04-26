@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:59:52 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 10:36:17 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:50:53 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int		i;
-	int		sin;
-	int		num;
+	int	i;
+	int	sin;
+	int	num;
 
 	i = 0;
 	sin = 1;
@@ -31,8 +31,8 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-			num = num * 10 + (str[i] - '0');
-			i++;
+		num = num * 10 + (str[i] - '0');
+		i++;
 	}
 	return (num * sin);
 }

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.c                                            :+:      :+:    :+:   */
+/*   think.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:37:44 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 19:03:29 by maricard         ###   ########.fr       */
+/*   Created: 2023/04/26 18:57:43 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/26 19:11:00 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	tests(t_root *root)
+void    start_thinking(t_philos *philos)
 {
-	printf("n_philos: %d\n", root->n_philos);
-	printf("n_forks: %d\n", root->n_forks);
-	printf("t_die: %lld\n", root->t_die);
-	printf("t_eat: %lld\n", root->t_eat);
-	printf("t_sleep: %lld\n", root->t_sleep);
-	if (root->n_philos_eat)
-		printf("n_philos_eat: %d\n", root->n_philos_eat);
-	
+    print(philos->index, "is thinking 💭", philos);
 }

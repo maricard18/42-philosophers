@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   threads.c                                          :+:      :+:    :+:   */
+/*   values.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 18:06:00 by maricard         ###   ########.fr       */
+/*   Created: 2023/04/26 10:00:26 by maricard          #+#    #+#             */
+/*   Updated: 2023/04/26 17:57:25 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	*start_dinner(void *arg)
-{
-	t_philos	*philos;
-
-	philos = arg;
-	check_for_forks(philos);
-	return (0);
-}
-
-void	start_threads(t_root *root)
+void	give_value_to_threads(t_root *root)
 {
 	int	i;
 
 	i = 0;
-	root->philos = malloc(sizeof(t_philos) * root->n_philos);
-	give_value_to_threads(root);
+	root->forks = malloc(sizeof(pthread_mutex_t) * root->n_philos);
 	while (i < root->n_philos)
 	{
-		root->philos[i].index = i + 1;
-		pthread_create(&root->philos[i].philo, NULL, &start_dinner,
-				&root->philos[i]);
+		pthread_mutex_init(&root->forks[i], NULL);
 		i++;
 	}
-	i = 0;
+	i = 1;
 	while (i < root->n_philos)
 	{
-		pthread_join(root->philos[i].philo, NULL);
+		root->philos[i].n_eat = 0;
+		root->philos[i].left = &root->forks[i];
+		root->philos[i].right = &root->forks[i - 1];
 		i++;
 	}
+	root->philos[0].n_eat = 0;
+	root->philos[0].left = &root->forks[0];
+	root->philos[0].right = &root->forks[root->n_philos - 1];
 }

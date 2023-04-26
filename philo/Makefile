@@ -6,12 +6,12 @@
 #    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/04/26 10:33:44 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/26 19:02:11 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 RM = rm -rf
 
 NAME = philo
@@ -21,10 +21,13 @@ SRC =	./utils/ft_atoi.c \
 		./utils/ft_bzero.c \
 		./utils/args.c \
 		./utils/tests.c \
-		./utils/linked_list.c \
 		./utils/print.c \
 		./src/threads.c  \
-		./src/forks.c
+		./src/values.c \
+		./src/forks_checker.c \
+		./src/time.c \
+		./src/sleep.c \
+		./src/think.c
 
 SRC-OBJ = $(SRC:.c=.o)
 

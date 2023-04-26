@@ -6,22 +6,18 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 10:16:15 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 10:34:23 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:46:37 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void    print_message(t_root *root, int sms)
+void	print(int philo, char *str, t_philos *philos)
 {
-    if (sms == 1)
-        printf("<time> %d is eating 🍝\n", root->th_index + 1);
-    else if (sms == 2)
-        printf("<time> %d is sleeping 💤\n", root->th_index + 1);
-    else if (sms == 3)
-        printf("<time> %d is thinking 💭\n", root->th_index + 1);
-    else if (sms == 4)
-        printf("<time> %d died 💀\n", root->th_index + 1);
-    else if (sms == 5)
-        printf("<time> %d has taken a fork 🍴\n", root->th_index + 1);
+	pthread_mutex_t	mutex;
+	
+	pthread_mutex_lock(&mutex);
+	printf("<time> %d %s\n", philo, str);
+	philos->n_eat = 1;
+	pthread_mutex_unlock(&mutex);
 }
