@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:37:44 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 19:03:29 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 20:48:24 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	tests(t_root *root)
 	printf("t_die: %lld\n", root->t_die);
 	printf("t_eat: %lld\n", root->t_eat);
 	printf("t_sleep: %lld\n", root->t_sleep);
-	if (root->n_philos_eat)
-		printf("n_philos_eat: %d\n", root->n_philos_eat);
+	if (root->n_philos_must_eat)
+		printf("n_philos_eat: %d\n", root->n_philos_must_eat);
 	
 }
