@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 20:21:50 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/26 23:43:33 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_args(&root, argv);
-	get_time(&root);
 	start_threads(&root);
 	return (0);
 }
