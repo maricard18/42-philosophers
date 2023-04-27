@@ -6,11 +6,31 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 17:09:48 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:02:51 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+void	*check_time(void *arg)
+{
+	t_root	*root;
+	int	i;
+
+	root = arg;
+	while (root->n_philos_die == 0)
+	{
+		i = 0;
+		while (i < root->n_philos)
+		{
+			check_death_time(&root->philos[i]);
+			if (root->n_philos_die != 0)
+				break ;
+			i++;
+		}
+	}
+	return (0);
+}
 
 void	*start_dinner(void *arg)
 {
@@ -20,17 +40,15 @@ void	*start_dinner(void *arg)
 	while (philos->died == 0 && philos->n_eat != philos->root->n_philos_must_eat)
 	{
 		check_for_forks(philos);
-		check_death_time(philos);
 		start_sleeping(philos);
-		check_death_time(philos);
 		start_thinking(philos);
 	}
-	tests(philos);
 	return (0);
 }
 
 void	start_threads(t_root *root)
 {
+	pthread_t	temp;
 	int	i;
 
 	i = 0;
@@ -44,12 +62,13 @@ void	start_threads(t_root *root)
 						&root->philos[i]);
 		i++;
 	}
+	pthread_create(&temp, NULL, &check_time, root);
+	pthread_join(temp, NULL);
 	i = 0;
 	while (i < root->n_philos)
 	{
 		pthread_join(root->philos[i].philo, NULL);
 		i++;
 	}
-	if (root->philos->n_eat == root->n_philos_must_eat)
-		printf("\nCharlie all done brother, we made it!\n");
+	printf("\nFINISH\n");
 }

@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 16:28:02 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:15:34 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 # define EAT 1
 # define SLEEP 2
@@ -45,6 +46,7 @@ typedef struct s_root
 	long long		t_sleep;
 	long long		start_time;
 	long long		eat_time;
+	bool			key;
 	int				n_plates;
 	int				n_philos;
 	int				n_forks;
@@ -61,7 +63,7 @@ typedef struct s_root
 void				ft_bzero(void *s, size_t n);
 void				init_args(t_root *root, char **argv);
 int					ft_atoi(const char *str);
-void				print(long long time, int philo, char *str);
+void				print(int philo, char *str, t_philos *philos);
 void				tests(t_philos *philos);
 
 // Time
