@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
+#    By: maricard <maricard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/04/27 21:05:48 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/27 23:03:36 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,10 @@ SRC =	./utils/ft_atoi.c \
 		./utils/print.c \
 		./utils/time.c \
 		./utils/clean.c \
+		./utils/values.c \
 		./src/threads.c \
-		./src/values.c \
-		./src/forks.c \
-		./src/sleep.c \
-		./src/think.c \
-		./src/died.c
-
+		./src/dinner.c
+		
 SRC-OBJ = $(SRC:.c=.o)
 
 all: $(NAME)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 21:05:34 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 22:58:28 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define PHILOSOPHERS_H
 
 # include <pthread.h>
+# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/time.h>
 # include <unistd.h>
-# include <stdbool.h>
 
 # define EAT 1
 # define SLEEP 2
@@ -70,7 +70,7 @@ void				clean_all(t_root *root);
 // Time
 long long			current_time(void);
 void				time_until_death(t_philos *philos);
-int 				check_death_time(t_philos *philos);
+int					check_death_time(t_philos *philos);
 
 // src
 void				start_threads(t_root *root);

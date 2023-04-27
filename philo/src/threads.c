@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 21:45:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 23:08:49 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+// Routine function for secondary thread
 void	*check_time(void *arg)
 {
 	t_root	*root;
@@ -40,6 +41,7 @@ void	*check_time(void *arg)
 	return (0);
 }
 
+// Routine function for main thread
 void	*start_dinner(void *arg)
 {
 	t_philos	*philos;
@@ -67,6 +69,7 @@ void	*start_dinner(void *arg)
 	return (0);
 }
 
+// Start threads
 void	start_threads(t_root *root)
 {
 	pthread_t	temp;
@@ -91,5 +94,4 @@ void	start_threads(t_root *root)
 		i++;
 	}
 	pthread_join(temp, NULL);
-	clean_all(root);
 }

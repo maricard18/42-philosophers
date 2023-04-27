@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 23:43:33 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 23:09:01 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int	main(int argc, char **argv)
 	}
 	init_args(&root, argv);
 	start_threads(&root);
+	clean_all(&root);
 	return (0);
 }
