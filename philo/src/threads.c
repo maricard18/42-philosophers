@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 20:02:51 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:34:17 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*check_time(void *arg)
 		{
 			check_death_time(&root->philos[i]);
 			if (root->n_philos_die != 0)
-				break ;
+				exit (0);
 			i++;
 		}
 	}
