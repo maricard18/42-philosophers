@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 23:08:49 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/28 00:28:11 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,17 @@ void	*check_time(void *arg)
 {
 	t_root	*root;
 	int	i;
-
+	
 	root = arg;
-	while (root->n_philos_die == 0)
+	while (root->n_philos_die == 0 && root->n_philos_ate != root->n_philos)
 	{
 		i = 0;
 		while (i < root->n_philos)
 		{
-			if (root->n_philos_ate == root->n_philos)
-			{
-				break ;
-//				check if philosopher already ate what it was
-//				suposed to eat !!!!!!				
-			}
-			check_death_time(&root->philos[i]);
+			if (root->philos[i].n_eat == root->n_philos_must_eat)
+				i++;
+			else	
+				check_death_time(&root->philos[i]);
 			if (root->n_philos_die != 0)
 			{
 				break ;
@@ -53,7 +50,10 @@ void	*start_dinner(void *arg)
 		{
 			check_for_forks(philos);
 			if (philos->n_eat == philos->root->n_philos_must_eat)
+			{
 				philos->root->n_philos_ate++;
+				return (0);
+			}
 		}
 		else
 			return (0);
