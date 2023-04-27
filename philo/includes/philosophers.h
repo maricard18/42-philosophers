@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 19:15:34 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 21:05:34 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void				init_args(t_root *root, char **argv);
 int					ft_atoi(const char *str);
 void				print(int philo, char *str, t_philos *philos);
 void				tests(t_philos *philos);
+void				clean_all(t_root *root);
 
 // Time
 long long			current_time(void);

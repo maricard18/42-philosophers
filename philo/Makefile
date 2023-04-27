@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/04/27 12:20:59 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/27 21:05:48 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC =	./utils/ft_atoi.c \
 		./utils/tests.c \
 		./utils/print.c \
 		./utils/time.c \
+		./utils/clean.c \
 		./src/threads.c \
 		./src/values.c \
 		./src/forks.c \
