@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 12:25:56 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:09:48 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,15 @@ void	*start_dinner(void *arg)
 	t_philos	*philos;
 
 	philos = arg;
-	while (philos->died == 0)
+	while (philos->died == 0 && philos->n_eat != philos->root->n_philos_must_eat)
 	{
 		check_for_forks(philos);
+		check_death_time(philos);
 		start_sleeping(philos);
-		tests(philos);
-		if ((current_time() - philos->root->start_time) > philos->root->t_die)
-		{
-			philo_died(philos);
-			break ;
-		}
+		check_death_time(philos);
 		start_thinking(philos);
-		if ((current_time() - philos->root->start_time) > philos->root->t_die)
-		{
-			philo_died(philos);
-			break ;
-		}
 	}
+	tests(philos);
 	return (0);
 }
 
@@ -58,4 +50,6 @@ void	start_threads(t_root *root)
 		pthread_join(root->philos[i].philo, NULL);
 		i++;
 	}
+	if (root->philos->n_eat == root->n_philos_must_eat)
+		printf("\nCharlie all done brother, we made it!\n");
 }

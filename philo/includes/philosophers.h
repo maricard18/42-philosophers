@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 12:50:20 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:28:02 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ typedef struct s_root
 void				ft_bzero(void *s, size_t n);
 void				init_args(t_root *root, char **argv);
 int					ft_atoi(const char *str);
-void				print(long long time, int philo, char *str,
-						t_philos *philos);
+void				print(long long time, int philo, char *str);
 void				tests(t_philos *philos);
+
+// Time
 long long			current_time(void);
 void				time_until_death(t_philos *philos);
+int 				check_death_time(t_philos *philos);
 
 // src
 void				start_threads(t_root *root);

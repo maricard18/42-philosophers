@@ -6,11 +6,19 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:26:41 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 12:48:56 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 15:48:23 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+int check_death_time(t_philos *philos)
+{
+	time_until_death(philos);
+    if (philos->t_until_dead <= 0)
+		philo_died(philos);
+	return (0);
+}
 
 void	time_until_death(t_philos *philos)
 {

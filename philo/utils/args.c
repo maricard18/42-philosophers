@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:40 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 20:47:15 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 16:16:47 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	init_args(t_root *root, char **argv)
 	root->t_die = ft_atoi(argv[2]);
 	root->t_eat = ft_atoi(argv[3]);
 	root->t_sleep = ft_atoi(argv[4]);
+	root->n_philos_must_eat = -1;
 	if (argv[5])
 		root->n_philos_must_eat = ft_atoi(argv[5]);
 }
