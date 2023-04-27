@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 23:57:43 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:50:20 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ typedef struct s_philos
 	int				index;
 	int				n_eat;
 	int				died;
+	long long		t_last_meal;
+	long long		t_until_dead;
 	pthread_t		philo;
 	pthread_mutex_t	*left;
 	pthread_mutex_t	*right;
@@ -41,7 +43,7 @@ typedef struct s_root
 	long long		t_die;
 	long long		t_eat;
 	long long		t_sleep;
-	long long		time;
+	long long		start_time;
 	long long		eat_time;
 	int				n_plates;
 	int				n_philos;
@@ -52,7 +54,6 @@ typedef struct s_root
 	int				th_index;
 	t_philos		*philos;
 	pthread_mutex_t	*forks;
-	pthread_mutex_t	mutex;
 }					t_root;
 
 // Functions
@@ -62,9 +63,9 @@ void				init_args(t_root *root, char **argv);
 int					ft_atoi(const char *str);
 void				print(long long time, int philo, char *str,
 						t_philos *philos);
-void				tests(t_root *root);
-long long			get_time(void);
-int					updated_time(t_root *root);
+void				tests(t_philos *philos);
+long long			current_time(void);
+void				time_until_death(t_philos *philos);
 
 // src
 void				start_threads(t_root *root);
@@ -72,5 +73,6 @@ void				check_for_forks(t_philos *philos);
 void				give_value_to_threads(t_root *root);
 void				start_sleeping(t_philos *philos);
 void				start_thinking(t_philos *philos);
+void				philo_died(t_philos *philos);
 
 #endif

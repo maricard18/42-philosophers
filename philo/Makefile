@@ -6,7 +6,7 @@
 #    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/04/26 19:02:11 by maricard         ###   ########.fr        #
+#    Updated: 2023/04/27 12:20:59 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,12 +22,13 @@ SRC =	./utils/ft_atoi.c \
 		./utils/args.c \
 		./utils/tests.c \
 		./utils/print.c \
-		./src/threads.c  \
+		./utils/time.c \
+		./src/threads.c \
 		./src/values.c \
-		./src/forks_checker.c \
-		./src/time.c \
+		./src/forks.c \
 		./src/sleep.c \
-		./src/think.c
+		./src/think.c \
+		./src/died.c
 
 SRC-OBJ = $(SRC:.c=.o)
 

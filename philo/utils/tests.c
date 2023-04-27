@@ -3,22 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   tests.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:37:44 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 23:56:57 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/27 12:43:48 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	tests(t_root *root)
+void	tests(t_philos *philos)
 {
-	printf("n_philos: %d\n", root->n_philos);
-	printf("n_forks: %d\n", root->n_forks);
-	printf("t_die: %lld\n", root->t_die);
-	printf("t_eat: %lld\n", root->t_eat);
-	printf("t_sleep: %lld\n", root->t_sleep);
-	if (root->n_philos_must_eat)
-		printf("n_philos_eat: %d\n", root->n_philos_must_eat);
+	printf("Current time: %lld\n", current_time() -philos->root->start_time);
+	printf("Philo %d last meal: %lld\n", philos->index, philos->t_last_meal);
+	printf("t_die: %lld\n", philos->root->t_die);
+	printf("Time until philo %d is dead: %lld\n",philos->index, philos->root->t_die - ((current_time() - philos->root->start_time) - philos->t_last_meal));
+	if (philos->root->n_philos_must_eat)
+		printf("Number of dinners: %d\n", philos->root->n_philos_must_eat);
 }
