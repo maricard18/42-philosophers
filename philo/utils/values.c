@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   values.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 10:00:26 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/28 12:54:12 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/28 18:08:11 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	give_value_to_threads(t_root *root)
 		pthread_mutex_init(&root->forks[i], NULL);
 		i++;
 	}
-	i = 1;
+	i = 0;
 	while (i < root->n_philos)
 	{
 		if (i % 2 == 0)
@@ -52,10 +52,6 @@ void	give_value_to_threads(t_root *root)
 			even_philo(root, i);
 		i++;
 	}
-	root->philos[0].t_last_meal = 0;
-	root->philos[0].died = 0;
-	root->philos[0].root = root;
-	root->philos[0].n_eat = 0;
 	root->philos[0].left = &root->forks[0];
 	root->philos[0].right = &root->forks[root->n_philos - 1];
 }
