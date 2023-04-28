@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/28 12:20:04 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/28 21:00:06 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,9 @@ void	*start_dinner(void *arg)
 				philos->root->n_philos_ate++;
 				return (0);
 			}
-		}
-		else
-			return (0);
-		if (philos->root->n_philos_die == 0)
 			start_sleeping(philos);
-		else
-			return (0);
-		if (philos->root->n_philos_die == 0)
 			start_thinking(philos);
-		else
-			return (0);
+		}
 	}
 	return (0);
 }
