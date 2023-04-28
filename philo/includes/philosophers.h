@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 22:58:28 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/28 12:36:48 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void				clean_all(t_root *root);
 // Time
 long long			current_time(void);
 void				time_until_death(t_philos *philos);
-int					check_death_time(t_philos *philos);
+void				check_death_time(t_philos *philos);
 
 // src
 void				start_threads(t_root *root);

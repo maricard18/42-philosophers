@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 23:09:01 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/28 10:54:20 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	init_args(&root, argv);
+	if (root.n_philos == 0 || root.n_philos_must_eat == 0)
+	{
+		printf("<philos> / <meals> must be greater than 0\n");
+		return (0);
+	}
 	start_threads(&root);
 	clean_all(&root);
 	return (0);
