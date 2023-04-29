@@ -6,12 +6,13 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:40 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/27 19:14:36 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:47:02 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+// initialize the arguments
 void	init_args(t_root *root, char **argv)
 {
 	root->n_philos = ft_atoi(argv[1]);

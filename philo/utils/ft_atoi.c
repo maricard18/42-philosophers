@@ -6,12 +6,13 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 11:59:52 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/26 16:50:53 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:47:09 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+// atoi function
 int	ft_atoi(const char *str)
 {
 	int	i;

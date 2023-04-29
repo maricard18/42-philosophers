@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 08:10:49 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/25 10:36:07 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:47:12 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+// bzero function
 void	ft_bzero(void *s, size_t n)
 {
 	while (n-- > 0)

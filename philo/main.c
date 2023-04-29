@@ -6,12 +6,13 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:32:02 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/28 10:54:20 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 15:46:00 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
+// main function
 int	main(int argc, char **argv)
 {
 	t_root	root;
