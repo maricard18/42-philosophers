@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/29 16:00:48 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 18:12:59 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	*start_dinner(void *arg)
 	t_philos		*philos;
 
 	philos = arg;
-	while (philos->n_eat != philos->root->n_philos_must_eat)
+	while (1)
 	{
 		check_for_forks(philos);
 		if (philos->n_eat == philos->root->n_philos_must_eat)
