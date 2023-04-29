@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 23:01:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/29 16:37:16 by maricard         ###   ########.fr       */
+/*   Updated: 2023/04/29 16:43:08 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,7 @@ void	philo_died(t_philos *philos)
 // philosopher thinking function
 void	start_thinking(t_philos *philos)
 {
-	pthread_mutex_t	mutex;
-
 	print(philos->index, "is thinking", philos, THINK);
-	pthread_mutex_init(&mutex, NULL);
-	pthread_mutex_lock(&mutex);
-	usleep(5 * 1000);
-	pthread_mutex_unlock(&mutex);
-	pthread_mutex_destroy(&mutex);
 }
 
 // philosopher sleeping function
