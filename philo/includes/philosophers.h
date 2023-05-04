@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:31:51 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/29 18:28:58 by maricard         ###   ########.fr       */
+/*   Updated: 2023/05/04 08:12:41 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@
 # define GREY "\033[0;90m"
 
 // Structs
-
 typedef struct s_philos
 {
 	int				index;
@@ -82,7 +81,6 @@ long long			get_time(void);
 long long			current_time(t_root *root);
 void				time_until_death(t_philos *philos);
 void				check_death_time(t_philos *philos);
-void				ft_sleep(t_root *root, int time);
 
 // src
 void				start_threads(t_root *root);
