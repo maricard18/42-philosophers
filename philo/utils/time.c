@@ -15,9 +15,6 @@
 // check if the philosper died
 void	check_death_time(t_philos *philos)
 {
-	int	i;
-
-	i = 0;
 	pthread_mutex_lock(&philos->root->time);
 	if (current_time(philos->root) - philos->t_last_meal \
 			>= philos->root->t_die)
