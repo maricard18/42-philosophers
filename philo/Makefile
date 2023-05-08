@@ -6,12 +6,12 @@
 #    By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/16 09:22:41 by maricard          #+#    #+#              #
-#    Updated: 2023/05/08 12:05:14 by maricard         ###   ########.fr        #
+#    Updated: 2023/05/08 14:58:12 by maricard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -g -Wall -Werror -Wextra -fsanitize=thread
+CFLAGS = -g -Wall -Werror -Wextra #-fsanitize=thread
 RM = rm -rf
 
 NAME = philo
