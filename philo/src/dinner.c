@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 23:01:37 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/29 18:08:23 by maricard         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:43:09 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,8 @@ void	start_thinking(t_philos *philos)
 // philosopher sleeping function
 void	start_sleeping(t_philos *philos)
 {
-	pthread_mutex_t	mutex;
-
 	print(philos->index, "is sleeping", philos, SLEEP);
-	pthread_mutex_init(&mutex, NULL);
-	pthread_mutex_lock(&mutex);
 	usleep(philos->root->t_sleep * 1000);
-	pthread_mutex_unlock(&mutex);
-	pthread_mutex_destroy(&mutex);
 }
 
 // checking if there is forks available
