@@ -5,7 +5,7 @@
 
 ## Philosophers dinning problem
 
-In this project, you will learn the basics of threading a process. <br>
+In this project, I learned the basics of threading a process. <br>
 I learned how to create and handle threads and mutexes. <br>
 This project is in rank 3 of 42 common core and had passed with the score of 100.<br>
 [-> Subject here](https://github.com/maricard18/42-philosophers/blob/main/philo/extras/en.subject.pdf)
