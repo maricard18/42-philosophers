@@ -3,7 +3,7 @@
 </p>
 
 
-## Philosphers dinning problem
+## Philosophers dinning problem
 
 In this project, you will learn the basics of threading a process. <br>
 I learned how to create and handle threads and mutexes. <br>
