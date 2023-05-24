@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="" alt="philosophers">
+    <img src="https://github.com/maricard18/42-philosophers/blob/main/philo/extras/philosophers.png" alt="philosophers">
 </p>
 
 
