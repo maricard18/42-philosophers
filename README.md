@@ -8,7 +8,7 @@
 This project is about coding a funtion that returns a line. <br>
 It's a very useful tool in future projects that require reading some form of input line by line. <br>
 This project is in rank 1 of 42 common core and had passed with the score of 125.<br>
-[-> Subject here]()
+[-> Subject here](https://github.com/maricard18/42-philosophers/blob/main/philo/extras/en.subject.pdf)
 
 
 ## How To Use
