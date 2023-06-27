@@ -26,9 +26,6 @@ $ cd philo
 $ make
 ```
 
-> **Note**
-> this project is only useful when used with porpuse. So if you want to get the most of it you will need to build a main function.
-
 
 ## Credits
 
