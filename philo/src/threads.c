@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   threads.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: maricard <maricard@student.porto.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 10:58:20 by maricard          #+#    #+#             */
-/*   Updated: 2023/05/04 08:42:13 by maricard         ###   ########.fr       */
+/*   Updated: 2023/07/13 10:20:38 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,28 +45,29 @@ int	supervisor(t_root *root)
 // routine function for main thread
 void	*start_dinner(void *arg)
 {
-	t_philos		*philos;
+	t_philos		*ph;
 
-	philos = arg;
+	ph = arg;
 	while (1)
 	{
-		check_for_forks(philos);
-		if (philos->n_eat == philos->root->n_philos_must_eat)
+		check_for_forks(ph);
+		if (ph->n_eat == ph->root->n_philos_must_eat)
 		{
-			pthread_mutex_lock(&philos->root->eat);
-			philos->root->n_philos_ate++;
-			pthread_mutex_unlock(&philos->root->eat);
+			pthread_mutex_lock(&ph->root->eat);
+			ph->root->n_philos_ate++;
+			pthread_mutex_unlock(&ph->root->eat);
 			return (0);
 		}
-		pthread_mutex_lock(&philos->root->die);
-		if (philos->root->n_philos_die)
+		pthread_mutex_lock(&ph->root->die);
+		if (ph->root->n_philos_die)
 		{
-			pthread_mutex_unlock(&philos->root->die);
+			pthread_mutex_unlock(&ph->root->die);
 			return (0);
 		}
-		pthread_mutex_unlock(&philos->root->die);
-		start_sleeping(philos);
-		start_thinking(philos);
+		pthread_mutex_unlock(&ph->root->die);
+		start_sleeping(ph);
+		usleep(((ph->root->t_die - (ph->root->t_eat + ph->root->t_sleep)) / 2));
+		start_thinking(ph);
 	}
 	return (0);
 }

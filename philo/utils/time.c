@@ -6,7 +6,7 @@
 /*   By: maricard <maricard@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 18:26:41 by maricard          #+#    #+#             */
-/*   Updated: 2023/04/29 15:50:40 by maricard         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:25:40 by maricard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 // check if the philosper died
 void	check_death_time(t_philos *philos)
 {
-	int	i;
-
-	i = 0;
 	pthread_mutex_lock(&philos->root->time);
 	if (current_time(philos->root) - philos->t_last_meal \
 			>= philos->root->t_die)
